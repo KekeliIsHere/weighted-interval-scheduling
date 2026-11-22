@@ -1,0 +1,25 @@
+Request_ID,Date,Facility,Activity,Requesting_Group,Start_Time,Finish_Time,Start_Minute,Finish_Minute,Value
+R01,2026-11-16,Main Auditorium,Computer Science Club Workshop,Student Affairs,08:00,09:30,480,570,45
+R02,2026-11-16,Main Auditorium,Freshers' Orientation Briefing,Student Affairs,08:30,10:00,510,600,80
+R03,2026-11-16,Main Auditorium,Robotics Demonstration,Engineering Society,09:00,11:00,540,660,95
+R04,2026-11-16,Main Auditorium,Academic Writing Clinic,Writing Centre,09:30,10:30,570,630,55
+R05,2026-11-16,Main Auditorium,Entrepreneurship Pitch Practice,Business Society,10:00,12:00,600,720,75
+R06,2026-11-16,Main Auditorium,Cybersecurity Awareness Talk,ICT Directorate,10:30,11:30,630,690,85
+R07,2026-11-16,Main Auditorium,Photography Masterclass,Media Club,11:00,13:00,660,780,60
+R08,2026-11-16,Main Auditorium,Faculty Research Seminar,Faculty of Science,11:30,13:30,690,810,100
+R09,2026-11-16,Main Auditorium,Peer Tutoring Session,Academic Support,12:00,13:00,720,780,50
+R10,2026-11-16,Main Auditorium,Women in Technology Panel,Women in STEM,12:30,14:30,750,870,90
+R11,2026-11-16,Main Auditorium,Debate Society Training,Debate Society,13:00,14:00,780,840,40
+R12,2026-11-16,Main Auditorium,Career Preparation Workshop,Career Services,13:30,15:30,810,930,88
+R13,2026-11-16,Main Auditorium,Student Innovation Showcase,Innovation Hub,14:00,16:30,840,990,120
+R14,2026-11-16,Main Auditorium,Christian Fellowship Meeting,Campus Fellowship,14:30,15:30,870,930,65
+R15,2026-11-16,Main Auditorium,Data Science Guest Lecture,Computer Science Department,15:00,16:00,900,960,105
+R16,2026-11-16,Main Auditorium,Music and Spoken Word Rehearsal,Arts Society,15:30,17:00,930,1020,58
+R17,2026-11-16,Main Auditorium,Alumni Networking Session,Alumni Relations,16:00,18:00,960,1080,110
+R18,2026-11-16,Main Auditorium,Student Council Town Hall,Student Council,16:30,18:30,990,1110,115
+R19,2026-11-16,Main Auditorium,Photography Exhibition Setup,Media Club,17:00,18:00,1020,1080,35
+R20,2026-11-16,Main Auditorium,Public Speaking Competition,Debate Society,18:00,20:00,1080,1200,125
+R21,2026-11-16,Main Auditorium,Community Outreach Planning,Volunteer Association,18:30,19:30,1110,1170,70
+R22,2026-11-16,Main Auditorium,Final-Year Project Showcase,Academic Affairs,19:00,21:00,1140,1260,130
+R23,2026-11-16,Main Auditorium,Film Screening and Discussion,Film Club,19:30,21:30,1170,1290,78
+R24,2026-11-16,Main Auditorium,Cultural Night Technical Rehearsal,Cultural Association,20:00,22:00,1200,1320,92
