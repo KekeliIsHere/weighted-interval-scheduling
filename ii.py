@@ -1,3 +1,5 @@
+from i import load_data, display
+
 def merge_by_finish(A, p, q, r):
     # Create temporary copies of the left subarray A[p..q] and right subarray A[q+1..r]
     L = A[p : q + 1]
@@ -77,3 +79,12 @@ def compute_predecessors(requests):
         P[i] = find_predecessor(sorted_reqs, i)
 
     return sorted_reqs, P
+
+#ii.
+if __name__ =="main":
+    requests = []
+    load_data(requests)
+
+    sorted, p = compute_predecessors(requests)
+    print("This is the sorted array" , display(sorted))
+    print("This is the predecessor index ", p)

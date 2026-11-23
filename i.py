@@ -2,7 +2,7 @@ import csv, itertools
 #from datetime import datetime, time
 
 class Request:
-    id: int
+    id: str
     start: str
     finish: str
     value: int
@@ -27,18 +27,17 @@ class Request:
     def compatible_with(self, other):
         return self.finish <= other.start or other.finish <= self.start
 
-with open("data.csv", mode="r", newline="", encoding="utf-8") as file:
-  reader = csv.reader(file)
+def load_data(requests):
+    with open("data.csv", mode="r", newline="", encoding="utf-8") as file:
+        reader = csv.reader(file)
 
-  # skip the header row
-  header = next(reader)
+        # skip the header row
+        header = next(reader)
 
-  requests = []
-
-  # create request object and store in request array
-  for id, date, fac, activity, requesting, start, finish, startm, finishm, value  in reader:
-    new_request = Request(id, start, finish, value)
-    requests.append(new_request)
+        # create request object and store in request array
+        for id, date, fac, activity, requesting, start, finish, startm, finishm, value  in reader:
+            new_request = Request(id, start, finish, value)
+            requests.append(new_request)
 
 # using brute force, find every possible combination of requests and compute best value
 def exhaustive_search(requests):
@@ -81,9 +80,11 @@ def display(subset):
 
 
 #i.
-val, subset = exhaustive_search(requests)
+if __name__ =="main":
+    requests = []
+    load_data(requests)
+    val, subset = exhaustive_search(requests)
 
-print(val, subset)
-print(val, display(subset))
-
-#ii.
+    # print(val, subset)
+    print("Maximum value is " , val)
+    print("Optimum combination for requests is " , display(subset))
