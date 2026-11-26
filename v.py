@@ -1,5 +1,6 @@
 from i import Request, exhaustive_search
 from iv import earliest_finish_greedy
+import time
 
 
 def run_counterexample():
@@ -18,4 +19,10 @@ def run_counterexample():
 
 
 if __name__ == "__main__":
+    vstart = time.perf_counter()
     run_counterexample()
+    vend = time.perf_counter()
+
+    # print(val, subset)
+    time5 = vend - vstart
+    print(f"Time elapsed: {time5:.6f} seconds")

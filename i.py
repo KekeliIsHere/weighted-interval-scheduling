@@ -1,4 +1,4 @@
-import csv, itertools
+import csv, time
 #from datetime import datetime, time
 
 class Request:
@@ -80,11 +80,15 @@ def display(subset):
 
 
 #i.
-if __name__ =="main":
+if __name__ == "__main__":
+    istart = time.perf_counter()
     requests = []
     load_data(requests)
     val, subset = exhaustive_search(requests)
+    iend = time.perf_counter()
 
     # print(val, subset)
-    print("Maximum value is " , val)
-    print("Optimum combination for requests is " , display(subset))
+    time1 = iend - istart
+    print("Maximum value is" , val)
+    print("Optimum combination for requests is" , display(subset))
+    print(f"Time elapsed: {time1:.6f} seconds")

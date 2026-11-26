@@ -1,4 +1,5 @@
 from i import load_data, display
+import time
 
 def merge_by_finish(A, p, q, r):
     # Create temporary copies of the left subarray A[p..q] and right subarray A[q+1..r]
@@ -81,10 +82,15 @@ def compute_predecessors(requests):
     return sorted_reqs, P
 
 #ii.
-if __name__ =="main":
+if __name__ == "__main__":
+    iistart = time.perf_counter()
     requests = []
     load_data(requests)
 
     sorted, p = compute_predecessors(requests)
+    iiend = time.perf_counter()
+
+    time2 = iiend - iistart
     print("This is the sorted array" , display(sorted))
     print("This is the predecessor index ", p)
+    print(f"Time elapsed: {time2:.6f} seconds")

@@ -26,3 +26,5 @@ def earliest_finish_greedy(requests):
             last_finish = req.finish
 
     return total_value, selected
+
+# if __name__ == "__main__":
