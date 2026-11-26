@@ -1,4 +1,4 @@
-import csv, itertools
+import csv, time
 #from datetime import datetime, time
 
 class Request:
@@ -29,6 +29,7 @@ class Request:
 
 with open("data.csv", mode="r", newline="", encoding="utf-8") as file:
   reader = csv.reader(file)
+  tstart = time.perf_counter()
 
   # skip the header row
   header = next(reader)
@@ -81,8 +82,13 @@ def display(subset):
     return display_subset
 
 #i.
-max = int(input("Whst is the max size of requests: "))
-val, subset = exhaustive_search(requests, max)
+if __name__ == "__main__":
+    
+    max = int(input("What is the max size of requests: "))
+    val, subset = exhaustive_search(requests, max)
+    tend = time.perf_counter()
 
-print(val, subset)
-print(val, display(subset))
+    ttime = tend - tstart
+    print("Maximum value is" , val)
+    print("Optimum combination for", max," requests is" , display(subset))
+    print(f"Time elapsed: {ttime:.6f} seconds")

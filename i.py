@@ -1,4 +1,4 @@
-import csv, itertools
+import csv, time
 #from datetime import datetime, time
 
 class Request:
@@ -7,10 +7,12 @@ class Request:
     finish: str
     value: int
     
-    def __init__(self, id, start, finish, value):
+    def __init__(self, id, start, finish, startm, finishm, value):
         self.id = id
         self.start = start
         self.finish = finish
+        self.startm = startm
+        self.finishm = finishm
         #self.start: time = datetime.strptime(start, "%H:%M").time()
         #self.finish: time = datetime.strptime(finish, "%H:%M").time()
         self.value = int(value)
@@ -36,7 +38,7 @@ def load_data(requests):
 
         # create request object and store in request array
         for id, date, fac, activity, requesting, start, finish, startm, finishm, value  in reader:
-            new_request = Request(id, start, finish, value)
+            new_request = Request(id, start, finish, int(startm), int(finishm), value)
             requests.append(new_request)
 
 # using brute force, find every possible combination of requests and compute best value
@@ -80,11 +82,15 @@ def display(subset):
 
 
 #i.
-if __name__ =="main":
+if __name__ == "__main__":
+    istart = time.perf_counter()
     requests = []
     load_data(requests)
     val, subset = exhaustive_search(requests)
+    iend = time.perf_counter()
 
     # print(val, subset)
-    print("Maximum value is " , val)
-    print("Optimum combination for requests is " , display(subset))
+    time1 = iend - istart
+    print("Maximum value is" , val)
+    print("Optimum combination for requests is" , display(subset))
+    print(f"Time elapsed: {time1:.6f} seconds")

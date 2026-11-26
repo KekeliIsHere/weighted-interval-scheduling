@@ -81,7 +81,7 @@ def compute_predecessors(requests):
     return sorted_reqs, P
 
 #ii.
-if __name__ =="main":
+if __name__ == "__main__":
     requests = []
     load_data(requests)
 
