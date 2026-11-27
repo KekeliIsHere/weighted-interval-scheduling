@@ -1,4 +1,6 @@
-import csv, time
+import csv
+from pathlib import Path
+import time
 #from datetime import datetime, time
 
 class Request:
@@ -27,17 +29,23 @@ class Request:
     def compatible_with(self, other):
         return self.finish <= other.start or other.finish <= self.start
 
-def load_data(requests):
-    with open("data.csv", mode="r", newline="", encoding="utf-8") as file:
+def load_data(requests=None):
+    if requests is None:
+        requests = []
+
+    data_path = Path(__file__).resolve().with_name("data.csv")
+    with data_path.open(mode="r", newline="", encoding="utf-8") as file:
         reader = csv.reader(file)
 
         # skip the header row
-        header = next(reader)
+        next(reader)
 
         # create request object and store in request array
         for id, date, fac, activity, requesting, start, finish, startm, finishm, value  in reader:
-            new_request = Request(id, start, finish, value)
+            new_request = Request(id, int(startm), int(finishm), int(value))
             requests.append(new_request)
+
+    return requests
 
 # using brute force, find every possible combination of requests and compute best value
 def exhaustive_search(requests):
